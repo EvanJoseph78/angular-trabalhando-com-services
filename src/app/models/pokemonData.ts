@@ -1,4 +1,8 @@
 export type PokemonData = {
-    name: string
-    ide: number
-}
+  name: string;
+  id: number;
+  sprites: {
+    front_default: string;
+  };
+  types: [];
+};
