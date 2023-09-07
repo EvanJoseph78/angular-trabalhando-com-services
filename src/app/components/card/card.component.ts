@@ -8,12 +8,27 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
-  pokemon: PokemonData | any;
-  atributesTypes: string[] = ['FIRE', 'WATER'];
-  constructor(private service: PokemonService) {}
+  pokemon: PokemonData;
+  constructor(private service: PokemonService) {
+    this.pokemon = {
+      id: 0,
+      name: '',
+      sprites: {
+        front_default: '',
+      },
+      types: [],
+    };
+  }
 
   ngOnInit(): void {
-    this.service.getPokemon('charizard').subscribe({
+    this.getPokemon('1');
+  }
+
+  getPokemon(searchName: string) {
+    if (searchName == ''){
+      searchName = '1'
+    }
+    this.service.getPokemon(searchName).subscribe({
       next: (res) => {
         this.pokemon = {
           id: res.id,
@@ -21,12 +36,8 @@ export class CardComponent implements OnInit {
           sprites: res.sprites,
           types: res.types,
         };
-
-        console.log(res);
-
-        console.log(this.pokemon);
       },
-      error: (err) => console.log(err),
+      error: (err) => console.log('not found'),
     });
   }
 }

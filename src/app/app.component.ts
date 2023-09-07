@@ -3,10 +3,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <h1>Evandro</h1>
-    <app-card></app-card>
-    <hr />
-    <router-outlet></router-outlet>
+    <div class="container">
+      <app-card></app-card>
+      <router-outlet></router-outlet>
+    </div>
   `,
   styleUrls: ['./app.component.css'],
 })

@@ -24,6 +24,7 @@
 
 .card__stats {
   padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -36,4 +37,14 @@
   background-color: orangered;
   padding: 5px;
   border-radius: 10px;
+}
+
+.card__body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card > input {
+  margin-bottom: 10px;
 }

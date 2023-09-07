@@ -1,0 +1,14 @@
+
+.container {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 140px;
+}
+
+.container > h1 {
+  background-color: yellow;
+  border-radius: 25px;
+  padding: 10px;
+}
